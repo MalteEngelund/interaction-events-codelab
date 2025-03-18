@@ -11,6 +11,15 @@ const mySubButton = document.getElementById('subtractButton');
 
 // skriv din eventhandler kode her ---------------------------------------
 
+// Tilføj event listeners til knapperne
+myAddButton.addEventListener('click', () => {
+    addValue();
+});
+
+mySubButton.addEventListener('click', () => {
+    subtractValue();
+});
+
 
 
 
@@ -52,6 +61,12 @@ const diceButton = document.getElementById('rollDiceOne');
 
 
 
+diceButton.addEventListener('click', () => {
+    let diceRoll = getRandomNumber(1, 7); // man kan ikke rulle det højeste tal
+    showResult(diceRoll, myDiceRes);
+});
+
+
 
 //-------------------------------------------------------------------------
 
@@ -70,7 +85,14 @@ let myLiveTextResult = document.getElementById('tasteResult');
 
 // skriv din eventhandler kode her ---------------------------------------
 
+// myLiveText.addEventListener('keydown', (event) => {
+//     showResult('Du tastede: ' + event.key, myLiveTextResult);
+// });
 
+myLiveText.addEventListener('input', () => {
+    showResult('Du tastede: ' + myLiveText.value, myLiveTextResult);
+});
+//viser alt det man indtaster
 
 
 //-------------------------------------------------------------------------
